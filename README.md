@@ -20,3 +20,14 @@ pro_name = "app"
 exclude_dir = [".svn/", ".idea/", "build/", "captures/", "22.iml", "crazyspread.iml"]
 # =================上面参数可以修改=================
 ```
+
+## 原理
+chaning-package-name.py:批量修改Android工程的包名，主要过程是先生成签名库，并将相关签名库
+信息保存到文件中；然后修改配置文件，.java和布局xml中的包名，以及主配置build.gradle中的签名库
+相关信息；最后脚本自动调用./gradlew assembleRelease编译apk。
+
+## 使用
+配置好上述参数后
+```shell
+python ./chaning-package-name.py
+```
